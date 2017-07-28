@@ -1,6 +1,8 @@
 const cheerio = require('cheerio');
 const fs = require('fs');
 const request = require('request');
+const notifier = require('node-notifier');
+const path = require('path');
 
 //var URL = "http://www.jiit.ac.in";
 
@@ -37,6 +39,24 @@ request("http://www.jiit.ac.in/academicsfacultycs?page="+i,function (err,respons
 }
 
 
+
+
+fs.stat('cs_it_dept.txt', function(err, stat) {
+    if(err == null) {
+        //console.log('File exists');
+        notifier.notify({
+            title: 'Message Triggered',
+            message: 'Ashish Your Script Has Been Loaded Completely!!',
+            icon: path.join(__dirname,'Ashish_PP.jpg')
+        })
+    } else if(err.code == 'ENOENT') {
+        // file does not exist
+        //console.log("ashish your file does not exist here:( :(");
+        //fs.writeFile('log.txt', 'Some log\n');
+    } else {
+        console.log('Some other error: ', err.code);
+    }
+});
 for(let i=0; i<4; i++)
 {
 

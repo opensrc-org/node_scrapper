@@ -11,6 +11,8 @@
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
     "fs": "0.0.1-security",
+    "node-notifier": "^5.1.2",
+    "path": "^0.12.7",
     "request": "^2.81.0"
   }
 }
