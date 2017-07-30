@@ -55,7 +55,7 @@ for(let i=1;i<20;i++)
         //console.log(repository_name);
         //console.log("Aashish");
 
-        fs.appendFileSync(username+'.doc',repository_name);
+        fs.appendFileSync('output/'+username+'.doc',repository_name);
 
     })
 
