@@ -26,6 +26,7 @@ request("http://www.jiit.ac.in/academicsfacultycs?page="+i,function (err,respons
 
     var $ = cheerio.load(body);
 
+
     $('div.view-faculty > div.view-content > ul > li.faculty-list > div.faculty-desc').each(function (index) {
 
         var faculty_name = $(this).find('div.faculty-name').text();
@@ -33,7 +34,9 @@ request("http://www.jiit.ac.in/academicsfacultycs?page="+i,function (err,respons
         /*console.log(faculty_name);
         console.log(faculty_email);
         console.log(' ');*/
+
         fs.appendFile('cs_it_dept.txt',faculty_name+'\n'+faculty_email+'\n\n');
+
     })
 });
 }
